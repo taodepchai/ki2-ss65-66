@@ -1,0 +1,33 @@
+import { useState } from "react";
+import { createStore } from "redux";
+function reducer(state = '1234', action: any) {
+  switch (action.type) {
+    case "CHANGE":
+        state = action.payload;
+      return state;
+    default:
+      return state;
+  }
+}
+
+let store = createStore(reducer);
+
+let change = (payload: string) => ({
+  type: "CHANGE",
+  payload,
+});
+
+
+export default function Bt6() {
+  let [count, setCount] = useState(store.getState());
+  store.subscribe(() => {
+    setCount(store.getState());
+  });
+  return (
+    <div>
+      <h1>Bt4</h1>
+      <button onClick={() => store.dispatch(change('5678'))}>change</button>
+      <p>{count}</p>
+    </div>
+  );
+}
