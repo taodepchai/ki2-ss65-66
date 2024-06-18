@@ -26,7 +26,7 @@ export default function Bt4() {
 
   return (
     <div>
-      <h1>Bt4</h1>
+      <h1>Bt5</h1>
       <button onClick={() => store.dispatch(random())}>
         Random Generate Number
       </button>

@@ -25,7 +25,7 @@ export default function Bt6() {
   });
   return (
     <div>
-      <h1>Bt4</h1>
+      <h1>Bt6</h1>
       <button onClick={() => store.dispatch(change('5678'))}>change</button>
       <p>{count}</p>
     </div>
